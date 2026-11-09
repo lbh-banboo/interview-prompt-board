@@ -11,6 +11,7 @@ permissions:
 jobs:
   backend:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -28,6 +29,7 @@ jobs:
 
   frontend:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -40,7 +42,7 @@ jobs:
         run: npm ci
       - name: Build (tsc)
         run: npm run build
-      - name: Install Chromium for e2e
-        run: npx playwright install --with-deps chromium
-      - name: Run frontend tests (unit + e2e)
-        run: npm test
+      - name: Run frontend unit tests
+        # e2e（*.e2e.test.mjs）依赖 macOS 音频环境与 Fake 音源设备，是本地测试职责
+        # （README：npm test 在开发机跑全量），CI 只验证编译与纯逻辑单元测试。
+        run: node --test $(find tests_web -name '*.test.mjs' ! -name '*.e2e.test.mjs')
