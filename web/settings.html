@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>设置 · 面试提示板</title>
+<link rel="stylesheet" href="/settings.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <div><span class="eyebrow">SETTINGS</span><h1>设置</h1></div>
+  <span id="active-note" class="active-note" role="status" hidden></span>
+  <a class="link" href="/home.html">工作台</a>
+</header>
+<p id="msg" class="msg" role="status" aria-live="polite"></p>
+<main class="wrap">
+  <section class="panel span2" aria-label="外发开关">
+    <h2>外发开关</h2>
+    <p class="muted">这些开关决定本机会把什么内容发送到外部服务。改动保存后下一场会话生效。</p>
+    <div id="outbound" class="outbound"></div>
+    <p id="outbound-msg" class="inline-msg" role="status" aria-live="polite"></p>
+    <p class="muted">Key 在<a href="/home.html">首页凭证区</a>配置（本页不输入、不回显 Key）。</p>
+  </section>
+
+  <section class="panel" aria-label="转写后端">
+    <h2>转写后端</h2>
+    <label class="field" for="asr-backend">ASR 后端</label>
+    <select id="asr-backend" class="input"></select>
+    <p id="asr-hint" class="hint"></p>
+    <p id="asr-msg" class="inline-msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel" aria-label="参数">
+    <h2>参数</h2>
+    <div id="params"></div>
+    <div class="savebar">
+      <button id="save" class="btn pill" type="button">保存设置</button>
+      <span id="save-msg" class="inline-msg" role="status" aria-live="polite"></span>
+    </div>
+    <ul id="errors" class="errors" role="alert"></ul>
+  </section>
+
+  <section class="panel span2" aria-label="回答者资料">
+    <h2>回答者资料</h2>
+    <p class="muted">重命名、删除已有资料，或编辑资料内容、关联答案库并同步更新。新建资料在会前配置向导里完成。正在进行中的会话使用资料时不能删除。</p>
+    <ul id="profiles" class="profiles"></ul>
+    <p id="profile-msg" class="inline-msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel span2" aria-label="开发者工具">
+    <details id="dev-tools">
+      <summary>开发者工具（故障注入说明）</summary>
+      <p class="muted" id="dev-note"></p>
+      <pre class="code">from app.health.faults import FaultInjector
+inj = FaultInjector()
+inj.inject('asr', 'down')      # 可选：network / ws / asr / asr_stall / llm / search / voice / disk / source
+inj.clear('asr')               # 恢复</pre>
+      <p class="muted">仅在测试中包装依赖；产品界面不提供注入接口，避免误触发现场故障。</p>
+    </details>
+  </section>
+</main>
+<script type="module" src="/settings.js"></script>
+</body>
+</html>

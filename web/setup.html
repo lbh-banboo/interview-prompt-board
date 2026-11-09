@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>开始之前，先确认一切就绪</title>
+<link rel="stylesheet" href="/setup.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>开始之前，先确认一切就绪</h1>
+  <span class="muted">约 1 分钟。面试中不能切换资料和岗位。</span>
+  <a class="link" href="/live.html">会话页</a>
+</header>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+<main class="layout">
+  <section class="wizard" aria-label="配置向导">
+    <ol id="steps" class="steps"></ol>
+    <div class="actions">
+      <button id="prev" class="btn" type="button">上一步</button>
+      <button id="next" class="btn pill" type="button">下一步</button>
+    </div>
+  </section>
+  <aside class="check-panel" aria-label="会前自检" aria-live="polite">
+    <div id="active-card" class="session-card" hidden>
+      <strong id="active-label">进行中的会话</strong>
+      <p class="muted">可以继续该会话，或先结束它再创建新会话。</p>
+      <div class="actions">
+        <a id="active-live" class="btn pill" href="#">进入会话页</a>
+        <button id="active-stop" class="btn" type="button">结束该会话</button>
+      </div>
+    </div>
+    <div id="started-card" class="session-card ok" hidden>
+      <strong>会话已开始</strong>
+      <p class="muted">进入会话页授权麦克风/会议音频；提示板与采集控制在同一页。</p>
+      <div class="actions">
+        <a id="started-live" class="btn pill" href="#">进入会话页</a>
+      </div>
+    </div>
+    <h2>会前自检</h2>
+    <p id="check-head" class="muted">完成六步配置后运行自检。</p>
+    <ul id="check-list" class="check-list"></ul>
+    <div id="banner" class="banner" hidden></div>
+    <label id="degrade-row" class="check" hidden><input type="checkbox" id="degrade-ok"><span>我已知晓失败项，确认降级开始</span></label>
+    <div class="actions">
+      <button id="rerun" class="btn" type="button" hidden>重新自检</button>
+      <button id="start" class="btn pill" type="button" disabled>开始会话</button>
+    </div>
+  </aside>
+</main>
+<div id="share-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="share-text" hidden>
+  <div class="modal-box">
+    <p id="share-text"></p>
+    <div class="actions">
+      <button id="share-cancel" class="btn" type="button">取消</button>
+      <button id="share-ok" class="btn pill" type="button">我知道了，开始</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="/setup.js"></script>
+</body>
+</html>

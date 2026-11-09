@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>提示板</title>
+<link rel="stylesheet" href="/board.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<div id="board" class="board">
+  <header class="bar" aria-label="状态条">
+    <span id="mode" class="chip">会话</span>
+    <span id="lamp-mic" class="lamp idle">回答方音源 未接入</span>
+    <span id="lamp-meeting" class="lamp idle">提问方音源 未接入</span>
+    <span id="caps" class="caps" aria-label="能力状态"></span>
+    <span id="lamp-conn" class="lamp idle">看板连接 未接入</span>
+    <span id="state" class="state" data-state="idle" role="status" aria-live="polite">听题中</span>
+  </header>
+  <div id="notices" class="notices" role="status" aria-live="polite"></div>
+  <main class="grid">
+    <div class="col-main">
+      <section class="question" aria-label="当前问题">
+        <div class="meta"><span class="eyebrow">当前问题</span><span id="level" class="level" hidden></span><span id="qbadge" class="badge" hidden></span><ol id="subq" class="subq" aria-label="子问题" hidden></ol></div>
+        <p id="qtext" class="qtext empty">等待提问…</p>
+        <ul id="revisions" class="revisions" hidden></ul>
+      </section>
+      <section id="primary" class="primary" aria-label="主答案（本题内锁定）">
+        <div class="meta"><span class="eyebrow">主答案</span><span id="source-tag" class="tag" hidden></span><span id="primary-note" class="note"></span></div>
+        <div id="primary-body" class="primary-body" hidden></div>
+        <p id="primary-empty" class="placeholder"></p>
+      </section>
+      <section class="supp" aria-label="补充（只追加）">
+        <div class="meta"><span class="eyebrow">补充</span></div>
+        <ol id="supp-list" class="supp-list"></ol>
+        <p id="supp-empty" class="placeholder">暂无补充</p>
+      </section>
+    </div>
+    <aside class="col-side">
+      <details id="cand" class="cand" open>
+        <summary>候选，未确认</summary>
+        <ul id="cand-list" class="cand-list"></ul>
+        <p id="cand-empty" class="placeholder">暂无候选</p>
+      </details>
+      <section class="queue" aria-label="待答队列">
+        <div class="meta"><span class="eyebrow">待答队列</span></div>
+        <ol id="queue" class="queue-list"></ol>
+        <p id="queue-empty" class="placeholder">队列为空</p>
+      </section>
+    </aside>
+  </main>
+  <footer class="hint">正式使用请用 <a href="/live.html">会话页</a>；本页保留为独立调试页。　Esc / H 隐藏与恢复　F 放大字号　Shift+F 缩小</footer>
+</div>
+<script type="module" src="/board.js"></script>
+</body>
+</html>

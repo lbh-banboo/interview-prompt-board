@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0b0b0c">
+<title>面试提示板 · 面试提词，现场可用</title>
+<link rel="stylesheet" href="/landing/landing.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="bg" aria-hidden="true">
+  <video class="bg-video" autoplay muted loop playsinline preload="metadata"
+         poster="/landing/assets/poster/bg-poster.jpg">
+    <source src="/landing/assets/video/bg-loop.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="page">
+  <header class="site-header anim">
+    <a class="logo-btn" href="/" aria-label="面试提示板 · 首页">
+      <img src="/landing/assets/logo/logo.webp" alt="" width="46" height="46">
+    </a>
+    <nav class="nav-pill" aria-label="主导航">
+      <a class="nav-link is-active" href="/" aria-current="page">首页</a>
+      <a class="nav-link" href="/home.html">工作台</a>
+      <a class="nav-link" href="/records.html">记录库</a>
+      <a class="nav-link" href="/settings.html">设置</a>
+    </nav>
+    <a class="sign-in" href="/setup.html">开始会话</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false"
+            aria-controls="mobileMenu" aria-label="打开菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="hero" id="main">
+    <div class="trust anim dl-1">
+      <div class="avatars">
+        <span class="avatar a1" title="本地优先">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+            <path d="M5 10a7 7 0 0 0 14 0"></path><path d="M12 17v5"></path>
+          </svg>
+        </span>
+        <span class="avatar a2" title="资料检索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"></path>
+            <path d="M4 19a2 2 0 0 0 2 2h13v-4"></path>
+          </svg>
+        </span>
+        <span class="avatar a3" title="事实边界">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+        </span>
+      </div>
+      <span class="trust-pill">本地优先 · 隐私可控</span>
+    </div>
+
+    <h1 class="headline anim dl-2">
+      <span class="line">Interview Copilot</span>
+      <span class="line line-cn">面试提词，现场可用</span>
+    </h1>
+
+    <p class="sub anim dl-3">听到问题，检索你自己的资料，提示板给出回答要点；录音与题库留在本机，回答只基于你确认过的事实。</p>
+
+    <div class="cta-row anim dl-4">
+      <a class="cta" href="/setup.html">开始一场会话</a>
+      <a class="cta-ghost" href="/home.html">进入工作台</a>
+    </div>
+
+    <section class="recent anim dl-5" id="recent" hidden aria-label="最近会话">
+      <h2 class="recent-title">最近会话</h2>
+      <ul class="recent-list" id="recentList"></ul>
+    </section>
+  </main>
+
+  <footer class="stats" aria-label="本机数据概览">
+    <div class="stat anim dl-5">
+      <span class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+          <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path>
+        </svg>
+      </span>
+      <span class="stat-value" data-stat="primary">—</span>
+      <span class="stat-label">主库已启用</span>
+    </div>
+    <div class="stat anim dl-6">
+      <span class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5-9 5-9-5z"></path>
+          <path d="M3 12l9 5 9-5"></path><path d="M3 17l9 5 9-5"></path>
+        </svg>
+      </span>
+      <span class="stat-value" data-stat="secondary">—</span>
+      <span class="stat-label">次优库已通过</span>
+    </div>
+    <div class="stat anim dl-7">
+      <span class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3 3"></path>
+        </svg>
+      </span>
+      <span class="stat-value" data-stat="sessions">—</span>
+      <span class="stat-label">历史会话</span>
+    </div>
+    <div class="stat anim dl-7">
+      <span class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"></rect>
+          <path d="M5 10a7 7 0 0 0 14 0"></path><path d="M12 17v5"></path>
+        </svg>
+      </span>
+      <span class="stat-value stat-text" data-stat="asr">—</span>
+      <span class="stat-label">转写方式</span>
+    </div>
+  </footer>
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay" hidden>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="移动端导航">
+    <a class="m-link is-active" href="/" aria-current="page">首页</a>
+    <a class="m-link" href="/home.html">工作台</a>
+    <a class="m-link" href="/records.html">记录库</a>
+    <a class="m-link" href="/settings.html">设置</a>
+    <a class="m-signin" href="/setup.html">开始会话</a>
+  </nav>
+</div>
+
+<script type="module" src="/landing/landing.js"></script>
+</body>
+</html>

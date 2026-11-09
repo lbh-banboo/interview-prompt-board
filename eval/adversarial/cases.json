@@ -1,0 +1,1089 @@
+{
+ "note": "合成数据，不含真实个人信息；entries 为虚构条目",
+ "entries": [
+  {
+   "entry_id": "e_order",
+   "tier": "primary",
+   "text": "我在订单中心项目担任后端工程师，2021年主导缓存改造，接口响应时间从800ms降到200ms，团队5人。使用Redis和Kafka。",
+   "facts": [
+    "订单中心项目接口响应时间从800ms降到200ms",
+    "团队5人"
+   ]
+  },
+  {
+   "entry_id": "e_galaxy",
+   "tier": "primary",
+   "text": "我在星河平台负责消息队列治理，吞吐提升30%，持续3年，职位是高级工程师。使用RocketMQ。",
+   "facts": [
+    "星河平台吞吐提升30%"
+   ]
+  },
+  {
+   "entry_id": "e_sec",
+   "tier": "secondary",
+   "text": "候选人在云帆公司做过推荐系统，点击率提升15%。",
+   "facts": []
+  },
+  {
+   "entry_id": "e_plain",
+   "tier": "primary",
+   "text": "我负责日常代码评审和文档维护。",
+   "facts": []
+  },
+  {
+   "entry_id": "e_rel",
+   "tier": "primary",
+   "text": "项目甲吞吐提升30%，项目乙吞吐提升10%。",
+   "facts": []
+  }
+ ],
+ "cases": [
+  {
+   "id": "A01",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我在订单中心项目将接口响应时间从800ms降到200ms。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A02",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "团队5人，使用Redis。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A03",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "团队五人。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A04",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_galaxy",
+     "text": "星河平台吞吐提升30%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A05",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_galaxy",
+     "text": "我持续做了三年消息队列治理。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A06",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_plain",
+     "text": "我负责代码评审。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A07",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "sentences": [
+      {
+       "text": "团队5人。",
+       "entry_id": "e_order"
+      },
+      {
+       "text": "吞吐提升30%。",
+       "entry_id": "e_galaxy"
+      }
+     ]
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "A08",
+   "category": "pass",
+   "task_case": "T3",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "这个项目里我负责缓存改造。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B01",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我把接口响应时间降到200ms，并发提升到1万。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B02",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "接口响应时间降低了60%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B03",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "2019年主导缓存改造。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B04",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_galaxy",
+     "text": "我有8年消息队列经验。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B05",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "吞吐提升了百分之五十。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B06",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "团队5%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B07",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "团队规模从5人扩到十二人。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B08",
+   "category": "induce_entity",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我在云帆公司做过同样的事。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "name_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B09",
+   "category": "induce_entity",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我担任架构师。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "name_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B10",
+   "category": "induce_entity",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我们还使用了MongoDB。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "term_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "B11",
+   "category": "induce_number",
+   "task_case": "T1",
+   "blocks": [
+    {
+     "kind": "personal",
+     "sentences": [
+      {
+       "text": "团队5人。",
+       "entry_id": "e_order"
+      },
+      {
+       "text": "成本降低了40%。",
+       "entry_id": "e_order"
+      }
+     ]
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C01",
+   "category": "swap",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "订单中心项目吞吐提升30%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C02",
+   "category": "swap",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我在星河平台将接口响应时间从800ms降到200ms。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "name_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C03",
+   "category": "swap",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_galaxy",
+     "text": "订单中心项目吞吐提升30%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "name_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C04",
+   "category": "swap",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "sentences": [
+      {
+       "text": "团队5人。",
+       "entry_id": "e_order"
+      },
+      {
+       "text": "吞吐提升5%。",
+       "entry_id": "e_galaxy"
+      }
+     ]
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C05",
+   "category": "swap",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_galaxy",
+     "text": "职位是后端工程师，持续5年。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C06",
+   "category": "third_to_first",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我在订单中心项目将吞吐提升了30%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C07",
+   "category": "third_to_first",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "我曾在项目中把延迟降低了30%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "public_first_person"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C08",
+   "category": "secondary",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_sec",
+     "text": "我在云帆公司做过推荐系统，点击率提升15%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "secondary_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "C09",
+   "category": "swap",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "我们团队今年交付了3个项目。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "D01",
+   "category": "fake_id",
+   "task_case": "T5",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_fake",
+     "text": "团队5人。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "unknown_entry_id"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "D02",
+   "category": "fake_id",
+   "task_case": "T5",
+   "blocks": [
+    {
+     "kind": "personal",
+     "sentences": [
+      {
+       "text": "团队5人。"
+      }
+     ]
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "missing_entry_id"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "D03",
+   "category": "fake_id",
+   "task_case": "T5",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "E_ORDER",
+     "text": "团队5人。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "unknown_entry_id"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "D04",
+   "category": "fake_id",
+   "task_case": "T5",
+   "blocks": [
+    {
+     "kind": "personal",
+     "sentences": []
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "empty_block"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "D05",
+   "category": "bad_kind",
+   "task_case": "T5",
+   "blocks": [
+    {
+     "kind": "mixed",
+     "text": "团队5人。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "bad_kind"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E01",
+   "category": "public_number",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "TCP三次握手建立连接，依次为SYN、SYN-ACK、ACK。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E02",
+   "category": "public_number",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "Redis默认端口是6379。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E03",
+   "category": "public_number",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "HTTP默认端口是80，HTTPS默认端口是443。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E04",
+   "category": "public_number",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "我国互联网用户规模超过10亿。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E05",
+   "category": "public_number",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "Kafka分区内消息有序，副本数通常设为3。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E06",
+   "category": "public_first_person",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "我们团队通常把副本数设为3。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "public_first_person"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "E07",
+   "category": "mixed",
+   "task_case": "T6",
+   "blocks": [
+    {
+     "kind": "public",
+     "text": "Redis默认端口是6379。"
+    },
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "团队5人。"
+    },
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "团队9人。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     2
+    ],
+    "reasons": [
+     "number_not_in_entry"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "F01",
+   "category": "spoken",
+   "task_case": "T7",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "成本降低了40%。"
+    }
+   ],
+   "spoken": [
+    "这个项目我把成本降低了40%"
+   ],
+   "expect": {
+    "ok": false,
+    "dropped": [
+     0
+    ],
+    "reasons": [
+     "spoken_only"
+    ],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "F02",
+   "category": "spoken",
+   "task_case": "T7",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "接口响应时间从800ms降到200ms。"
+    }
+   ],
+   "spoken": [
+    "刚才说接口响应时间降到了100ms"
+   ],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 1
+   },
+   "known_risk": false
+  },
+  {
+   "id": "F03",
+   "category": "spoken",
+   "task_case": "T7",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "接口响应时间从800ms降到200ms。"
+    }
+   ],
+   "spoken": [
+    "接口响应时间降到200ms"
+   ],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "F04",
+   "category": "spoken",
+   "task_case": "T7",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_order",
+     "text": "接口响应时间从800ms降到200ms。"
+    }
+   ],
+   "spoken": [
+    "我周末爬山花了3小时"
+   ],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": false
+  },
+  {
+   "id": "G01",
+   "category": "known_risk_R10",
+   "task_case": "T4",
+   "blocks": [
+    {
+     "kind": "personal",
+     "entry_id": "e_rel",
+     "text": "项目乙吞吐提升30%。"
+    }
+   ],
+   "spoken": [],
+   "expect": {
+    "ok": true,
+    "dropped": [],
+    "reasons": [],
+    "hints": 0
+   },
+   "known_risk": true
+  }
+ ]
+}

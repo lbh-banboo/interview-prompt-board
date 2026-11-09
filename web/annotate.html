@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>提问点校对台</title>
+<link rel="stylesheet" href="/review.css">
+<link rel="stylesheet" href="/annotate.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>提问点校对台</h1>
+  <select id="audio" aria-label="录音"></select>
+  <div class="prog" id="prog" role="progressbar" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" aria-label="校对进度">
+    <div class="prog-bar"><i id="prog-fill"></i></div>
+    <span id="prog-label">已判定 0/0</span>
+  </div>
+  <a class="link" href="/home.html">返回工作台</a>
+</header>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+<main class="layout">
+  <aside class="side" aria-label="条目列表与筛选">
+    <div id="filters" class="filters" role="group" aria-label="筛选"></div>
+    <ul id="list" class="list" aria-label="提问点条目"></ul>
+  </aside>
+  <section class="col" aria-label="条目详情">
+    <div class="player">
+      <audio id="player" controls preload="metadata" aria-label="录音播放器"></audio>
+      <label class="speed">速度
+        <select id="speed" aria-label="播放速度">
+          <option value="0.75">0.75×</option>
+          <option value="1" selected>1×</option>
+          <option value="1.25">1.25×</option>
+          <option value="1.5">1.5×</option>
+        </select>
+      </label>
+    </div>
+    <div id="detail" class="detail"></div>
+  </section>
+</main>
+<footer class="keys">键盘：y 是问题结束点 · n 不是 · f 追问 · t 改题 · s 跳过 · r 重播 · j 下一条 · k 上一条</footer>
+<script type="module" src="/annotate.js"></script>
+</body>
+</html>

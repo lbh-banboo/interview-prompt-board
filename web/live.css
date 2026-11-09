@@ -1,0 +1,137 @@
+/* 会话页：提示板 + 状态条 + 采集控制。board.css 提供提示板主体，这里补状态条与采集面板。 */
+[hidden]{display:none!important}
+body{overflow:auto}
+.board{height:100vh;display:flex;flex-direction:column;padding:10px 16px 6px;gap:8px;overflow:hidden}
+
+/* 状态条 */
+.live-bar{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:7px 12px;
+  background:var(--fill-1);border:1px solid var(--line-2);border-radius:var(--r-md);font-size:13px;
+  font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.live-bar>*{max-width:100%}
+.live-id{font-weight:600;color:var(--ink);white-space:nowrap}
+.live-elapsed{color:var(--muted);min-width:3.4em;font-variant-numeric:tabular-nums}
+.live-banner{color:var(--warn);border:1px solid rgba(230,180,80,.38);border-radius:var(--r-pill);padding:0 10px}
+.live-grow{margin-left:auto}
+.live-sources{color:var(--muted);font-size:12px;white-space:normal;min-width:0}
+.mic-gate{color:var(--need);font-size:12px;white-space:normal;min-width:0}
+.q-enroll{color:var(--need);font-weight:600;text-decoration:underline}
+.live-outbound{color:var(--strip);font-size:12px;white-space:normal;min-width:0}
+.live-state{padding:1px 10px;border:1px solid var(--line-3);border-radius:var(--r-pill);font-weight:600;color:var(--ink);white-space:nowrap}
+.live-state[data-state="preparing"]{color:var(--warn)}
+.live-state[data-state="capturing"]{color:var(--ok);border-color:rgba(111,207,151,.45)}
+.live-state[data-state="ended"]{color:var(--ink-dim)}
+.live-bar .state{margin-left:0;font-size:13px;padding:1px 10px}
+
+/* 按钮 */
+.btn{background:var(--fill-2);border:1px solid var(--line-2);border-radius:var(--r-pill);padding:3px 12px;
+  color:var(--ink);font:inherit;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.btn:hover{border-color:var(--line-3)}
+.btn:disabled{color:var(--ink-dim);cursor:not-allowed;opacity:.6}
+.btn.pill{background:var(--ink);color:#050505;border-color:var(--ink);font-weight:600}
+.btn.pill:disabled{background:var(--fill-2);color:var(--ink-dim);border-color:var(--line-2)}
+.btn.danger{border-color:var(--fail);color:var(--fail)}
+.end{margin-left:2px}
+
+/* 采集控制 */
+.capture{flex:none;background:var(--panel);border:1px solid var(--line-2);border-radius:var(--r-md);padding:5px 14px 8px;font-size:13px}
+.capture summary{cursor:pointer;color:var(--muted);font-weight:500;padding:2px 0}
+.cap-grid{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:6px;min-width:0}
+.cap-grid label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;white-space:nowrap}
+.cap-grid select{background:var(--raised);color:var(--ink);border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:2px 8px;font:inherit;font-size:13px;max-width:220px}
+.cap-grid .check{white-space:normal}
+.cap-grid .check input{accent-color:var(--ok)}
+.cap-grid .buttons{display:flex;gap:8px}
+.cap-grid .primary{background:var(--ink);color:#050505;border-color:var(--ink);font-weight:600;
+  border-radius:var(--r-pill);padding:3px 14px;font:inherit;font-size:13px;cursor:pointer}
+.cap-grid .primary:disabled{background:var(--fill-2);color:var(--ink-dim);border-color:var(--line-2);cursor:not-allowed}
+.cap-grid .muted{font-size:12px;color:var(--strip)}
+.levels{display:flex;flex-wrap:wrap;gap:2px 18px;margin:2px 0 0;font-size:12px;color:var(--muted)}
+.levels p{margin:0;display:flex;align-items:center;gap:6px}
+.levels progress{width:110px;height:8px;accent-color:var(--ok)}
+.levels [data-state="silent"],.levels [data-state="warn"]{color:var(--fail);font-weight:600}
+.live-sources[data-alert="meeting"]{color:var(--fail);font-weight:600}
+.meeting-help{margin-top:4px;font-size:12px;line-height:1.55;color:var(--muted)}
+.meeting-help summary{cursor:pointer;color:var(--muted);padding:1px 0}
+.meeting-help ul,.meeting-help ol{margin:4px 0 0;padding-left:20px}
+.meeting-help li{margin:2px 0}
+.meeting-help .muted{color:var(--strip);font-size:12px;margin:2px 0 0}
+.capture-msg{margin:4px 0 0;min-height:1.2em;color:var(--need);font-size:12px}
+#board.live-ended .capture{opacity:.55}
+
+/* 已结束 / 无会话 */
+.notice-card{flex:none;background:var(--panel);border:1px solid var(--line-3);border-radius:var(--r-md);padding:8px 14px}
+.notice-card.ok{border-color:rgba(111,207,151,.45);background:rgba(111,207,151,.08)}
+.notice-card strong{color:var(--ink)}
+.notice-card p{margin:2px 0 0}
+.notice-card .muted{color:var(--strip);font-size:13px}
+.notice-card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+#board.no-session .grid{display:none}
+#board.no-session .capture{display:none}
+#board.no-session .notices{visibility:hidden}
+
+/* 确认弹层 */
+.modal{position:fixed;inset:0;background:rgba(5,5,5,.72);display:flex;align-items:center;justify-content:center;z-index:20;padding:16px}
+.modal-box{background:var(--raised);border:1px solid var(--line-3);border-radius:var(--r-md);padding:20px;max-width:440px;width:100%}
+.modal-box p{margin:0 0 10px;font-size:1.05rem}
+.modal-box .actions{display:flex;justify-content:flex-end;gap:10px}
+
+@media (max-width:1000px){
+  .board{height:auto;min-height:100vh;overflow:visible}
+  .grid{grid-template-columns:1fr;flex:none}
+  .col-side{overflow:visible}
+  .live-bar{gap:4px 10px}
+  .live-grow{display:none}
+  .live-sources{flex:1 1 100%}
+  .question{height:auto;min-height:6rem}
+  .supp{min-height:8rem}
+}
+
+/* 采集引导条：三步状态 + 就地帮助 */
+.guide{list-style:none;margin:6px 0 4px;padding:0;display:flex;flex-direction:column;gap:5px}
+.g-step{border:1px solid var(--line-1);border-radius:var(--r-sm);padding:6px 10px;background:var(--fill-1);min-width:0}
+.g-step[hidden]{display:none!important}
+.g-step[data-phase="active"]{border-color:var(--line-3);background:var(--fill-2)}
+.g-step[data-phase="attention"]{border-color:rgba(239,106,100,.55);background:rgba(239,106,100,.10)}
+.g-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.g-head strong{font-size:13px;font-weight:600}
+.g-icon{flex:none;width:1.4em;height:1.4em;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line-3);font-size:12px;line-height:1;color:var(--muted)}
+.g-step[data-phase="done"] .g-icon{color:var(--ok);border-color:rgba(111,207,151,.45)}
+.g-step[data-phase="attention"] .g-icon{color:var(--fail);border-color:rgba(239,106,100,.55)}
+.g-step[data-phase="active"] .g-icon{color:var(--warn);border-color:rgba(230,180,80,.38)}
+.g-step[data-phase="skipped"] .g-icon{color:var(--ink-dim);border-color:var(--line-2)}
+.g-status{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+.g-step[data-phase="done"] .g-status{color:var(--ok)}
+.g-step[data-phase="attention"] .g-status{color:var(--fail)}
+.g-hint{margin:2px 0 0;font-size:12px;line-height:1.5;color:var(--strip);overflow-wrap:anywhere}
+.g-step[data-phase="attention"] .g-hint{color:var(--fail)}
+.g-body{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:6px;min-width:0}
+.g-body label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;white-space:nowrap;max-width:100%}
+.g-body select{background:var(--raised);color:var(--ink);border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:2px 8px;font:inherit;font-size:12px;max-width:220px}
+.g-body .check{white-space:normal}
+.g-body .check input{accent-color:var(--ok)}
+.g-body .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.level-row{margin:0;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);min-width:0}
+.level-row progress{width:110px;height:8px;accent-color:var(--ok)}
+.level-row [data-state="silent"],.level-row [data-state="warn"]{color:var(--fail);font-weight:600}
+.g-help{margin:2px 0 0;flex:1 1 100%;font-size:12px;line-height:1.5;color:var(--fail)}
+.capture .primary,.cap-actions .primary{background:var(--ink);color:#050505;border-color:var(--ink);font-weight:600;
+  border-radius:var(--r-pill);padding:3px 14px;font:inherit;font-size:13px;cursor:pointer}
+.capture .primary:disabled,.cap-actions .primary:disabled{background:var(--fill-2);color:var(--ink-dim);border-color:var(--line-2);cursor:not-allowed}
+.cap-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:4px;min-width:0}
+.cap-actions .muted{font-size:12px;color:var(--strip);overflow-wrap:anywhere}
+.guide-summary{color:var(--muted);font-size:12px;font-weight:400;margin-left:8px}
+.live-sources[data-alert="room"]{color:var(--fail);font-weight:600}
+
+/* 开始按钮禁用原因 + 仅麦克风说明 + 掉线提示 */
+.start-hint{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.start-hint[data-state="blocked"]{color:var(--warn);font-weight:600}
+.start-hint[data-state="ready"]{color:var(--ok)}
+.q-notice{margin:4px 0 0;padding:5px 10px;border:1px solid var(--need-line);border-radius:var(--r-sm);
+  background:rgba(224,160,122,.08);color:var(--need);font-size:.84rem;line-height:1.5;overflow-wrap:anywhere}
+.lamp[data-need="1"]{color:var(--need);font-weight:600}
+.lamp[data-need="1"]::before{background:var(--need);box-shadow:0 0 8px rgba(224,160,122,.45)}
+.live-sources[data-link="bad"]{color:var(--fail);font-weight:600}
+.g-step.cur{box-shadow:inset 3px 0 0 var(--warn)}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>音频采集验证页</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/nav/nav.css"><script type="module" src="/nav/nav.js"></script></head>
+<body><header><div><span class="eyebrow">M02 / CAPTURE</span><h1>音频采集验证页</h1></div></header>
+<p id="message" role="status">正在连接本地服务…</p>
+<p class="muted">正式使用请用 <a href="/live.html">会话页</a>；本页保留为独立调试页。</p>
+<main><aside><section><h2>会话</h2>
+<label>麦克风<select id="device"><option value="">系统默认</option></select></label>
+<label>会议音频来源<select id="meeting-mode"><option value="tab">共享浏览器标签页（网页会议，推荐）</option><option value="device">使用虚拟声卡/第二输入设备（桌面客户端）</option></select></label>
+<label hidden>会议音频设备<select id="meeting-device"><option value="">（选择输入设备）</option></select></label>
+<label class="check"><input id="consent" type="checkbox">已确认参与者知情录音、音频可能上传第三方云转写，及面试辅助许可</label>
+<div class="buttons"><button id="start" class="primary">开始（麦克风）</button><button id="meeting" disabled>添加会议音频</button><button id="stop" disabled>结束并保存</button></div>
+<details id="meeting-help" class="meeting-help">
+<summary>会议音频怎么选</summary>
+<ul>
+<li><strong>网页会议：</strong>把会议放在 Chrome 标签页；“会议音频来源”选“共享浏览器标签页”，在共享选择器里选该标签页，并勾选“共享标签页音频”。</li>
+<li><strong>桌面客户端（腾讯会议/飞书/Zoom）：</strong>浏览器抓不到客户端系统声音。可选方案是用虚拟声卡（如 BlackHole 2ch）把系统输出回环成输入设备，再选“使用虚拟声卡/第二输入设备”。</li>
+<li><strong>macOS 虚拟声卡配置：</strong>安装 BlackHole 2ch → 打开“音频 MIDI 设置” → 新建“多输出设备”（勾选耳机/扬声器 + BlackHole 2ch）→ 把系统输出设为该多输出设备 → 本页会议音频选 BlackHole 2ch。</li>
+</ul>
+<p class="muted">虚拟声卡是可选方案，不是必须安装的软件。</p>
+</details>
+<details id="meeting-trouble" class="meeting-help">
+<summary>会议音频无声音怎么办</summary>
+<ol>
+<li>网页会议：改选“Chrome 标签页”，并勾选“共享标签页音频”。</li>
+<li>桌面客户端：用虚拟声卡，把系统输出设为“多输出设备”（耳机/扬声器 + BlackHole 2ch）。</li>
+<li>确认对方正在说话，再看一次电平条。</li>
+</ol>
+</details>
+</section></aside>
+<div class="workspace"><section><h2>电平</h2>
+<p>麦克风 <progress id="level-mic" max="1" value="0"></progress> <span id="state-mic">未采集</span></p>
+<p>会议音频 <progress id="level-meeting" max="1" value="0"></progress> <span id="state-meeting">未采集</span></p>
+<p id="ws">WebSocket：未连接</p>
+<p id="stats">已发送帧：mic 0 / meeting 0；缺口帧：0；重连代数：0</p>
+</section></div></main><script type="module" src="/capture-page.js"></script></body></html>

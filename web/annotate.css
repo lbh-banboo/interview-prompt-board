@@ -1,0 +1,17 @@
+/* 提问点校对台：复用 review.css 的变量与基础组件，只补播放器与判定按钮。 */
+.col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.player{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line-2);border-radius:var(--r-md);padding:10px 14px}
+.player audio{flex:1;min-width:240px}
+.speed{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.speed select{background:var(--raised);border:1px solid var(--line-2);border-radius:var(--r-sm);padding:4px 8px}
+.stmt{font-size:19px;line-height:1.5;margin:4px 0 2px;word-break:break-word}
+.verdicts{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 6px}
+.verdicts .btn{padding:12px 18px;font-size:15px}
+.verdicts .btn.primary{background:#fff;color:#050505;border-color:#fff;font-weight:600}
+.row .open{gap:3px}
+.row .t{color:var(--strip);font-size:12px;font-variant-numeric:tabular-nums}
+.actions .btn{margin-right:8px}
+#note{margin-top:12px;min-height:90px}
+@media (max-width:860px){
+  .col{min-height:auto}
+}

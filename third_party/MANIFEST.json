@@ -1,0 +1,328 @@
+[
+ {
+  "repo": "buluoai6-eng/online-meeting-interview-assistant",
+  "commit": "78083e18e05eb29e089a612c496a2d425d882f1b",
+  "path": "LICENSE",
+  "license": "MIT",
+  "sha256": "7d94c961e57507fcaecd86ef2468998a7f90cb60af04a26e17ef8cfbfee56ad4",
+  "git_blob": "6e88921d2ba29e1366c542d1674bdeb9ded45bad",
+  "bytes": 1069,
+  "status": "ok"
+ },
+ {
+  "repo": "buluoai6-eng/online-meeting-interview-assistant",
+  "commit": "78083e18e05eb29e089a612c496a2d425d882f1b",
+  "path": "src/speaker-router.js",
+  "license": "MIT",
+  "sha256": "a1910623f1887c967c857b4ae3c78073f74dd64e310b04823c8628251851f4f1",
+  "git_blob": "5b877f750d3c69fd0877bf2a93d9d0e08e22c99d",
+  "bytes": 643,
+  "status": "ok"
+ },
+ {
+  "repo": "buluoai6-eng/online-meeting-interview-assistant",
+  "commit": "78083e18e05eb29e089a612c496a2d425d882f1b",
+  "path": "src/question-detector.js",
+  "license": "MIT",
+  "sha256": "54b82278ceec5567b454c4396b862e90fa870ef2a54e21bd259e5b9658c95da0",
+  "git_blob": "6d2635ece6d3e4e570e0b8d1f33fe6073324c8b2",
+  "bytes": 1128,
+  "status": "ok"
+ },
+ {
+  "repo": "buluoai6-eng/online-meeting-interview-assistant",
+  "commit": "78083e18e05eb29e089a612c496a2d425d882f1b",
+  "path": "src/turn-guard.js",
+  "license": "MIT",
+  "sha256": "32758695d82bf9bfff18de168f91b5590ef9ce407db2491b70184f8861e325eb",
+  "git_blob": "2302e9382f27200e673431b9b9ba847902750dee",
+  "bytes": 3738,
+  "status": "ok"
+ },
+ {
+  "repo": "buluoai6-eng/online-meeting-interview-assistant",
+  "commit": "78083e18e05eb29e089a612c496a2d425d882f1b",
+  "path": "scripts/test-turn-guard.js",
+  "license": "MIT",
+  "sha256": "e3114cb7c1c0b1d019afd294419ef1f4472c7a99d5c89f478b68f891c8b9d3b9",
+  "git_blob": "475faf617e51f2deb23677f012d5b04844621a58",
+  "bytes": 2204,
+  "status": "ok"
+ },
+ {
+  "repo": "buluoai6-eng/online-meeting-interview-assistant",
+  "commit": "78083e18e05eb29e089a612c496a2d425d882f1b",
+  "path": "scripts/test-question-detector.js",
+  "license": "MIT",
+  "sha256": "020bdd627cfbbb8d2bac68703a7f89912893e4ff4bf27369851a93fb65de5571",
+  "git_blob": "d717e318ab8a438cdebd7a156e54c0231cf900f7",
+  "bytes": 1197,
+  "status": "ok"
+ },
+ {
+  "repo": "lesue1/interview-assistant",
+  "commit": "739b01f2a0f816dbeaf9c0d1b0afa80ed0c61f5e",
+  "path": "LICENSE",
+  "license": "MIT",
+  "sha256": "bdacf3ac320d2d13e2364c20b935bbcb539adecd8b79c9a5b229d9c10943e2e7",
+  "git_blob": "1264195bf46c86451ad57740e0515ce11fbcc598",
+  "bytes": 1063,
+  "status": "ok"
+ },
+ {
+  "repo": "lesue1/interview-assistant",
+  "commit": "739b01f2a0f816dbeaf9c0d1b0afa80ed0c61f5e",
+  "path": "main.py",
+  "license": "MIT",
+  "sha256": "682905d91c7d038a9ddb377a2a2b22dd8e00a65f00fe40ba99d625d290128453",
+  "git_blob": "8bc73925249bcb65818f26fc0f2a41a31bfa23dc",
+  "bytes": 26997,
+  "status": "ok"
+ },
+ {
+  "repo": "lesue1/interview-assistant",
+  "commit": "739b01f2a0f816dbeaf9c0d1b0afa80ed0c61f5e",
+  "path": "preflight.py",
+  "license": "MIT",
+  "sha256": "50b073cfbaf61e0f020c5e67aae6c550eae586cab24825474ad1b232b0cadca7",
+  "git_blob": "5c8d64abba14342204c69e7963b2db6d8b37d8f8",
+  "bytes": 4262,
+  "status": "ok"
+ },
+ {
+  "repo": "lesue1/interview-assistant",
+  "commit": "739b01f2a0f816dbeaf9c0d1b0afa80ed0c61f5e",
+  "path": "transcript.py",
+  "license": "MIT",
+  "sha256": "ed5335225e5ff3f2347f670e7a4f8d151f9c9aaee52d0d6555785e8790c27b96",
+  "git_blob": "710310ced199ec057e49970371ee8af386c679ae",
+  "bytes": 4360,
+  "status": "ok"
+ },
+ {
+  "repo": "lesue1/interview-assistant",
+  "commit": "739b01f2a0f816dbeaf9c0d1b0afa80ed0c61f5e",
+  "path": "test_gate.py",
+  "license": "MIT",
+  "sha256": "f4a9fc92bd735c8f51a01a5e049fdca4c1807784329705b36cc2995f1fcdd547",
+  "git_blob": "944b02b23f23ae721369d886e5988250a37fb6e5",
+  "bytes": 15674,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "LICENSE",
+  "license": "Apache-2.0",
+  "sha256": "9d532b2c0be653085b75d62c8cb9d3c13ee9c5c96f52a8673eda65eafd1e4f06",
+  "git_blob": "3d10326f7fd837e3ef9d2377a3fe007d539c7e9a",
+  "bytes": 10752,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "NOTICE",
+  "status": "http_404"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/asr/contract.ts",
+  "license": "Apache-2.0",
+  "sha256": "1703012db88b94448dd8ed023776b40d598182dfb1c94fb51535185edf3508db",
+  "git_blob": "16f512a58b3a4d74cd59121ef1b01c70e7e790a1",
+  "bytes": 2222,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/asr/aliyunRealtimeEngine.ts",
+  "license": "Apache-2.0",
+  "sha256": "84a247b9bdf88cf98779c616ae6c1cde1cdfdc0d0041b7830155125310e130b9",
+  "git_blob": "bf46e9d7d0d0a126fc016b95190fe2cfadea1ee0",
+  "bytes": 8500,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/asr/cloudEngine.ts",
+  "license": "Apache-2.0",
+  "sha256": "36e13197dcaea791d3600317454c7119423e78cbe0c08d0bb6a74895a00c3195",
+  "git_blob": "2185e3e56f538b5f124c939133ca956dfeed31ba",
+  "bytes": 2264,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/asr/vad.ts",
+  "license": "Apache-2.0",
+  "sha256": "dcbbddd6ef7893e6f5d163a8bd126536673d26fe800c44f49fd7329741595627",
+  "git_blob": "f6774b21554f1b4f4b3a1cf5af2c6739dc8a5d6f",
+  "bytes": 6480,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/llm/prompts.ts",
+  "license": "Apache-2.0",
+  "sha256": "810d94ca8567362abb81eebe93143457f7c85283d28c248bac5fc124433430a2",
+  "git_blob": "4a5224c75dad41f1eb4577d9453e2e12c365db82",
+  "bytes": 12947,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/providerErrors.ts",
+  "license": "Apache-2.0",
+  "sha256": "374d500910a2651f16f78d47a1dd1dbd12ab876e48564c0275345ff478c58f56",
+  "git_blob": "eb9766f697ad213ab57daa9524f0263d160b676d",
+  "bytes": 13135,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "electron/diagnostics.ts",
+  "license": "Apache-2.0",
+  "sha256": "4f712794b99cf9beeaca5661b90b2c5873c4d2f937cc6ed49e2042a2395bf64a",
+  "git_blob": "8f44014bbb488187899490dea2235415e781c801",
+  "bytes": 9774,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "tools/funasr_stream_server.py",
+  "license": "Apache-2.0",
+  "sha256": "d293c911afe9c3d8512abc59f411e16ebb73063941f3151cb877c2ed9d0a01cb",
+  "git_blob": "a6ce0b5ad828dd55dc81776988b53732a6bb087b",
+  "bytes": 14408,
+  "status": "ok"
+ },
+ {
+  "repo": "JWM0203/MeetingCopilot",
+  "commit": "337973a0a2e34424fb541a158d89533b5c4514cd",
+  "path": "tools/funasr_device.py",
+  "license": "Apache-2.0",
+  "sha256": "a992b698d454795e8c77966b401f966700309d52e5f7d9eebc45908f0f2b5fc6",
+  "git_blob": "9f16258175d392a75f185d0646abcf59c9985fe0",
+  "bytes": 1020,
+  "status": "ok"
+ },
+ {
+  "repo": "ukez15/interview-copilot",
+  "commit": "4a80d842fa22a359b4ab05eea8b2c8432c113e07",
+  "path": "LICENSE",
+  "license": "MIT",
+  "sha256": "4e292fcf639ee98a784eb2954fcbd11a3199638a401f8ebcc62b10b29924a73d",
+  "git_blob": "ad4044bf33d5c50a7e83cfa2a0c935ef07aae25a",
+  "bytes": 1063,
+  "status": "ok"
+ },
+ {
+  "repo": "ukez15/interview-copilot",
+  "commit": "4a80d842fa22a359b4ab05eea8b2c8432c113e07",
+  "path": "src/desktop/src/capture/pcm-worklet.ts",
+  "license": "MIT",
+  "sha256": "4791688b42b7ff0407034110b670f297c25cefc831e9c1ebd5045691107c4bbb",
+  "git_blob": "c8182f17c7d76a710b43c059ce8e83c140e7f8b1",
+  "bytes": 1297,
+  "status": "ok"
+ },
+ {
+  "repo": "ukez15/interview-copilot",
+  "commit": "4a80d842fa22a359b4ab05eea8b2c8432c113e07",
+  "path": "src/desktop/src/capture/pcm.ts",
+  "license": "MIT",
+  "sha256": "8affcccc42dc1b4655061220cc97f164709e7ca36a43f76d07dff763cb45e65b",
+  "git_blob": "f87273d42781f1c76880651c9bd09cc99d41735d",
+  "bytes": 3615,
+  "status": "ok"
+ },
+ {
+  "repo": "ukez15/interview-copilot",
+  "commit": "4a80d842fa22a359b4ab05eea8b2c8432c113e07",
+  "path": "src/desktop/src/capture/frame-buffer.ts",
+  "license": "MIT",
+  "sha256": "351a96372414c5ce8ba99b85a360646ac2d7fdef8a5d6efab174e2070ae0d3d8",
+  "git_blob": "8788a20afb137c7123949bee8a4aa934bc9b0c09",
+  "bytes": 714,
+  "status": "ok"
+ },
+ {
+  "repo": "ukez15/interview-copilot",
+  "commit": "4a80d842fa22a359b4ab05eea8b2c8432c113e07",
+  "path": "src/desktop/src/capture/audio-sender.ts",
+  "license": "MIT",
+  "sha256": "8871c25840efa4692aebfdb507f89fea7afa7b791494b5759453ce6e8ececf61",
+  "git_blob": "5e45d2e3051a827d65a9d2b5019b8d66caa13a6f",
+  "bytes": 2698,
+  "status": "ok"
+ },
+ {
+  "repo": "ukez15/interview-copilot",
+  "commit": "4a80d842fa22a359b4ab05eea8b2c8432c113e07",
+  "path": "src/desktop/src/capture/backoff.ts",
+  "license": "MIT",
+  "sha256": "bf4ed788e61c95e8f8697479fee5a34f41fbda32990be8a80a250d524e1eba67",
+  "git_blob": "f383f7d8c8c83dcd37e0d33c1728b716b3832e78",
+  "bytes": 257,
+  "status": "ok"
+ },
+ {
+  "repo": "Kaalia0912/ai-interview-assistant",
+  "commit": "f6dc0f7b11887c0bc81d8dc5e8a37c38e9da6bef",
+  "path": "LICENSE",
+  "license": "MIT",
+  "sha256": "1a67629591a0a6cea4a1c446b15fb305d6f14209c8dafd0689a7c89ddf58ca47",
+  "git_blob": "2ebfd45063b30e940b22f55492b06e393802426d",
+  "bytes": 1067,
+  "status": "ok"
+ },
+ {
+  "repo": "Kaalia0912/ai-interview-assistant",
+  "commit": "f6dc0f7b11887c0bc81d8dc5e8a37c38e9da6bef",
+  "path": "rag-assistant/app/core/structurer.py",
+  "license": "MIT",
+  "sha256": "360dc84c10e09e84921d1cf973840582f5ad7a3a2a5c26012d6e3e00ff57e68f",
+  "git_blob": "f4dfcaed8c754ae2689b18bba4f084126fec3f04",
+  "bytes": 2718,
+  "status": "ok"
+ },
+ {
+  "repo": "Kaalia0912/ai-interview-assistant",
+  "commit": "f6dc0f7b11887c0bc81d8dc5e8a37c38e9da6bef",
+  "path": "rag-assistant/app/core/reranker.py",
+  "license": "MIT",
+  "sha256": "b4dbbf52109f4e6dfa2d05dadc8bc9ca2903626fe012684b77302a14dec7e16a",
+  "git_blob": "1928fbb813a822ca898d206ec04918623f3b91d4",
+  "bytes": 1216,
+  "status": "ok"
+ },
+ {
+  "repo": "Kaalia0912/ai-interview-assistant",
+  "commit": "f6dc0f7b11887c0bc81d8dc5e8a37c38e9da6bef",
+  "path": "rag-assistant/app/core/generator.py",
+  "license": "MIT",
+  "sha256": "84073f6fcef9bde028fb0300a70d41cd4146bcf428203e070b7faab0c56731af",
+  "git_blob": "a68cba0d083b729340a19253dc8e9008a95a911d",
+  "bytes": 3003,
+  "status": "ok"
+ },
+ {
+  "repo": "Kaalia0912/ai-interview-assistant",
+  "commit": "f6dc0f7b11887c0bc81d8dc5e8a37c38e9da6bef",
+  "path": "rag-assistant/data/mianjing-public/00-语料来源与许可.md",
+  "license": "MIT",
+  "sha256": "02601d334190845b544eb4f5e1df1b65f6c23320d5126cad49abcfc2f3b0f7ee",
+  "git_blob": "bf8fba1fcf38d9ec304dd9a75cc2ab7e5fecf2a7",
+  "bytes": 3992,
+  "status": "ok"
+ }
+]

@@ -1,0 +1,6 @@
+sample_id,latency_ms,missed,premature,role_ok,role_unknown,overlap_truth,audio_path,log_path
+q1,200.0,0,0,1,0,0,./eval/reports/synthetic_seed0_close.wav,./eval/reports/synthetic_seed0_close.script.json
+q2,200.0,0,0,1,0,0,./eval/reports/synthetic_seed0_close.wav,./eval/reports/synthetic_seed0_close.script.json
+q3,200.0,0,0,1,0,0,./eval/reports/synthetic_seed0_close.wav,./eval/reports/synthetic_seed0_close.script.json
+q4,200.0,0,0,1,0,0,./eval/reports/synthetic_seed0_close.wav,./eval/reports/synthetic_seed0_close.script.json
+q5,200.0,0,0,1,0,0,./eval/reports/synthetic_seed0_close.wav,./eval/reports/synthetic_seed0_close.script.json

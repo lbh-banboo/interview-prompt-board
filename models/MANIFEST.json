@@ -1,0 +1,74 @@
+[
+ {
+  "file": "silero_vad_16k_op15.onnx",
+  "purpose": "M05-1 本地 VAD（Silero VAD v5，16kHz，opset15）",
+  "sha256": "7ed98ddbad84ccac4cd0aeb3099049280713df825c610a8ed34543318f1b2c49",
+  "bytes": 1289603,
+  "version": "silero-vad 6.2.3 (PyPI wheel silero_vad/data/silero_vad_16k_op15.onnx)",
+  "source_url": "https://files.pythonhosted.org/packages/84/ef/9099037ed6f180ea33220178df4107112c0ce2bf5fb4d6f6ab19db2844ed/silero_vad-6.2.3-py3-none-any.whl",
+  "source_wheel_sha256": "7b7f5436cfcb02fae583a05b512ea96467fd449fe54cb49a5e4f06c51a1e43b8",
+  "upstream": "https://github.com/snakers4/silero-vad",
+  "license": "MIT (Silero Team), 见 LICENSE.silero-vad",
+  "input_window": "每次 576 样本 = 64 样本上下文 + 512 新样本(32ms)，16kHz 单声道 float32；sherpa-onnx 2.0.1 VadModel.is_speech",
+  "runtime": "sherpa-onnx==2.0.1",
+  "note": "GitHub release 资产(k2-fsa/sherpa-onnx asr-models/silero_vad.onnx)在本机网络不可达，改取 PyPI 包内模型；PyPI 包内 silero_vad.onnx(v6 含 sr 输入) 与 silero_vad_op18_ifless.onnx 不被 sherpa-onnx 2.0.1 接受，仅 16k_op15 可用。"
+ },
+ {
+  "file": "bge-small-zh-v1.5/model_optimized.onnx",
+  "purpose": "M08-2 本地句向量（fastembed bge-small-zh-v1.5，512 维）",
+  "model_id": "Qdrant/bge-small-zh-v1.5",
+  "revision": "46fbe35fd4374a00fee7de77dfddaeb6dd6a2c59",
+  "sha256": "1294ea4b6331115a353d81f96b85e8c8d7fdcc284453d5b2fab5b016230aad38",
+  "bytes": 94781076,
+  "source_url": "https://hf-mirror.com/Qdrant/bge-small-zh-v1.5/resolve/main/model_optimized.onnx",
+  "upstream": "https://huggingface.co/Qdrant/bge-small-zh-v1.5 (原模型 BAAI/bge-small-zh-v1.5, MIT)",
+  "aux_sha256": {
+   "tokenizer.json": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26",
+   "vocab.txt": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+   "config.json": "9088751d39abbf86ec3d19ffca92ad62ad19075f7e59712e6c71217fa125d1d3",
+   "tokenizer_config.json": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a",
+   "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+  },
+  "input_window": "最长 512 token（BERT tokenizer.json，fastembed 默认截断），输出 512 维，L2 归一化；问句对问句不加检索指令前缀",
+  "runtime": "fastembed==0.9.1, onnxruntime==1.31.1, CPUExecutionProvider",
+  "platform": "Darwin arm64 Python 3.13.12",
+  "note": "huggingface.co 本机直连不可达，经 hf-mirror.com 镜像仅下载权重（HF_HUB_DISABLE_XET=1）；revision 取自 huggingface_hub 下载元数据（镜像报告的 commit），未与 huggingface.co 交叉核对。"
+ },
+ {
+  "file": "sherpa-streaming-paraformer-bilingual-zh-en/encoder.int8.onnx",
+  "purpose": "本地流式 ASR 降级基线（sherpa-onnx streaming paraformer 中英双语，int8；app/asr/sherpa.py）",
+  "model_id": "csukuangfj/sherpa-onnx-streaming-paraformer-bilingual-zh-en",
+  "revision": "8e40c43232a1c5c66c82111efc5820d3accca11b",
+  "sha256": "81a70226a8934e6ed92aa1d4fc486b428b5398e2f2619ed4897b7294cab90e9a",
+  "bytes": 165462184,
+  "source_url": "https://hf-mirror.com/csukuangfj/sherpa-onnx-streaming-paraformer-bilingual-zh-en/resolve/main/encoder.int8.onnx",
+  "upstream": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-paraformer-bilingual-zh-en (许可证以上游仓库/原模型 modelscope paraformer-bilingual-zh-en 为准，商用前需复核)",
+  "aux_sha256": {
+   "decoder.int8.onnx": "f3cca9f77bb9d93c8fcbfb63ae617b6b1ee96818df3aa3b151c40658fe38594f",
+   "tokens.txt": "59aba8873a2ed1e122c25fee421e25f283b63290efbde85c1f01a853d83cb6e6"
+  },
+  "aux_bytes": {
+   "decoder.int8.onnx": 71664561,
+   "tokens.txt": 75756
+  },
+  "input_window": "16kHz 单声道 float32 [-1,1]，80 维 fbank；流式解码 chunk 约 600ms（实测文本约每 0.6s 更新一次）；无 token 时间戳",
+  "runtime": "sherpa-onnx==2.0.1, OnlineRecognizer.from_paraformer, CPU, num_threads=2",
+  "platform": "Darwin arm64 Python 3.13.12",
+  "note": "经 hf-mirror.com 镜像仅下载权重（HF_HUB_DISABLE_XET=1）；revision 取自镜像元数据，未与 huggingface.co 交叉核对。只下载 int8 编码器/解码器，未下载 fp32 版本。"
+ },
+ {
+  "file": "speaker/3dspeaker_speech_campplus_sv_zh-cn_16k-common.onnx",
+  "purpose": "M03-2 本地声纹 embedding（3D-Speaker CAM++ 中文说话人确认，app/audio/voiceprint.py）",
+  "model_id": "csukuangfj/speaker-embedding-models",
+  "revision": "0743f301363dec56491a490f6d6cbc9d67f9a3bf",
+  "sha256": "f682b514c05d947ee3fa91cd6ec6c5c7543479a128373fa29b1faedccd21fd11",
+  "bytes": 28281138,
+  "source_url": "https://hf-mirror.com/csukuangfj/speaker-embedding-models/resolve/main/3dspeaker_speech_campplus_sv_zh-cn_16k-common.onnx",
+  "upstream": "https://huggingface.co/csukuangfj/speaker-embedding-models (原模型 modelscope iic/speech_campplus_sv_zh-cn_16k-common, 3D-Speaker, Apache-2.0；许可证以上游为准，商用前需复核)",
+  "input_window": "16kHz 单声道 float32 [-1,1]，内部 80 维 fbank；输入任意长度，本系统滚动窗口 0.8~3s；输出 192 维，余弦比较",
+  "runtime": "sherpa-onnx==2.0.1 SpeakerEmbeddingExtractor, CPU, num_threads=1",
+  "platform": "Darwin arm64 Python 3.13.12",
+  "bench": "3s 合成输入：冷(加载+首次) 277ms；热 P50 19.2ms / P95 21.4ms（tools/bench_voiceprint.py，本机实测，不可跨机引用）",
+  "note": "经 hf-mirror.com 仅下载权重（HF_HUB_DISABLE_XET=1）；revision 取自镜像元数据，未与 huggingface.co 交叉核对。"
+ }
+]

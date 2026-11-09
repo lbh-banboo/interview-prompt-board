@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>主库审核工作台</title>
+<link rel="stylesheet" href="/review.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>主库审核工作台</h1>
+  <select id="library" aria-label="题库"></select>
+  <div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="50" id="prog">
+    <div class="prog-bar"><i id="prog-fill"></i></div>
+    <span id="prog-label">已审核 0/50</span>
+  </div>
+</header>
+<div class="toolbar">
+  <button id="enhance-btn" class="btn" type="button">增强拆解</button>
+  <span id="enhance-label" class="muted">未开始增强</span>
+  <span class="sep" aria-hidden="true"></span>
+  <input id="reimport-file" type="file" accept=".md,text/markdown" aria-label="新版题库 .md">
+  <button id="reimport-btn" class="btn" type="button">重新导入</button>
+  <span id="reimport-stats" class="muted" role="status" aria-live="polite"></span>
+</div>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+<main class="layout">
+  <aside class="side" aria-label="队列与筛选">
+    <input id="search" type="search" placeholder="搜索编号或问题" aria-label="搜索">
+    <div id="filters" class="filters" role="tablist"></div>
+    <label class="queue-toggle"><input type="checkbox" id="queue-on"><span>审核优先队列</span></label>
+    <ul id="list" class="list"></ul>
+    <div class="batch">
+      <div id="batch-info" class="muted"></div>
+      <button id="select-safe" class="btn" type="button">勾选视图内全部安全条目</button>
+      <label class="check"><input type="checkbox" id="batch-confirm"><span>已核对所选条目的事实</span></label>
+      <button id="batch-btn" class="btn pill" type="button">批量启用安全条目</button>
+      <ul id="batch-rejects" class="rejects"></ul>
+    </div>
+  </aside>
+  <section class="detail" id="detail" aria-label="条目详情"></section>
+</main>
+<footer class="keys">键盘：j 下一条 · k 上一条 · a 启用 · h 暂缓 · r 驳回</footer>
+<script type="module" src="/review.js"></script>
+</body>
+</html>

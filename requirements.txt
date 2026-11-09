@@ -1,0 +1,16 @@
+fastapi==0.162.0
+pydantic==2.14.1
+starlette==1.10.0
+uvicorn==0.54.0
+websockets==17.3
+numpy==2.5.4
+sherpa-onnx==2.0.1
+fastembed==0.9.1
+sqlite-vec==0.1.9
+onnxruntime==1.31.1
+tokenizers==0.23.3
+huggingface_hub==1.33.0
+pytest==9.1.1
+pytest-asyncio==1.4.1
+pytest-cov==7.1.0
+httpx==0.28.1

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>面试提示板 · 工作台</title>
+<link rel="stylesheet" href="/home.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <div><span class="eyebrow">INTERVIEW COPILOT</span><h1>工作台</h1><a class="link" href="/">返回首页</a></div>
+  <span id="session" class="session" data-active="false" role="status">正在读取状态…</span>
+</header>
+<main class="wrap">
+  <nav id="cards" class="cards" aria-label="功能入口"></nav>
+  <section class="panel" aria-label="能力状态">
+    <h2>能力状态</h2>
+    <ul id="lamps" class="lamps"></ul>
+    <p class="muted">会话进行中显示各能力的实时健康灯，否则显示服务接入状态</p>
+  </section>
+  <section class="panel" aria-label="主库审核进度">
+    <h2>主库审核进度</h2>
+    <select id="library" aria-label="题库"></select>
+    <div id="prog" class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="100"><i id="prog-fill"></i></div>
+    <p id="prog-label" class="muted">暂无主库审核数据</p>
+    <p id="g3" class="g3" hidden>G3 达成</p>
+  </section>
+  <section class="panel" aria-label="设置概览">
+    <h2>设置概览</h2>
+    <ul id="config" class="plain"></ul>
+    <h3>凭证</h3>
+    <p class="muted">Key 只保存在本机（钥匙串或 data/.env），保存后不回显，也不写入日志。环境变量优先于界面配置。</p>
+    <div id="creds" class="creds"></div>
+    <p id="cred-msg" class="muted" role="status" aria-live="polite"></p>
+  </section>
+  <section class="panel" aria-label="用量概览">
+    <h2>用量概览</h2>
+    <ul id="usage" class="plain"></ul>
+  </section>
+</main>
+<script type="module" src="/home.js"></script>
+</body>
+</html>

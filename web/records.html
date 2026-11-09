@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>记录库</title>
+<link rel="stylesheet" href="/review.css">
+<link rel="stylesheet" href="/records.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body class="records">
+<header class="top">
+  <h1>记录库</h1>
+  <span class="muted">历史会话的逐字稿、轮次、系统提示与复盘</span>
+  <a class="link" href="/home.html">工作台</a>
+</header>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+<main class="layout records-layout">
+  <aside class="side" aria-label="会话列表">
+    <input id="search" type="search" placeholder="搜索会话编号、资料、岗位" aria-label="搜索会话">
+    <div id="filters" class="filters" role="tablist" aria-label="状态筛选"></div>
+    <ul id="list" class="list rec-list"></ul>
+    <p id="list-info" class="muted"></p>
+  </aside>
+  <section class="detail" id="detail" aria-label="会话详情"></section>
+</main>
+<script type="module" src="/records.js"></script>
+</body>
+</html>

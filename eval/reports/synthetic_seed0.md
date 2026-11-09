@@ -1,0 +1,37 @@
+类别: SIMULATED
+
+# 性能评测报告（线上 / online）
+
+- 结论: SIMULATED
+- 样本数 n=5（未校对排除 0，其他 mode 排除 0）
+- 说明: 模拟/Mock 结果，不构成真实通过结论，也不得被其他类别继承。
+
+## 延迟（按有效事件分布，失败延迟未剔除）
+- 判定延迟 t_committed-t_end: n=5, P50=200.0, P95=200.0, P99=200.0, max=200.0 (ms)
+
+## 全样本
+- 全样本成功率（未漏判且无过早）: 1/5 = 20.00% (95% CI 3.62%~62.45%)
+- 漏判数: 0，漏判率 0/5 = 0.00% (95% CI 0.00%~43.45%)
+- 过早结束数(commit_rolled_back): 4，过早率 4/5 = 80.00% (95% CI 37.55%~96.38%)
+- candidate_withdrawn（单独统计，不计入过早）: 0
+
+## 角色识别
+- 真值重叠区间（不进分母，单列）: 0
+- 角色分母: 5
+- 角色正确率（unknown 计错）: 5/5 = 100.00% (95% CI 56.55%~100.00%)
+- unknown 数: 0，覆盖率（非 unknown 占比）: 5/5 = 100.00% (95% CI 56.55%~100.00%)
+
+## 失败/漏判样本清单（保留音频与日志索引）
+- q1 | 过早x1 | audio=./eval/reports/synthetic_seed0.wav | log=./eval/reports/synthetic_seed0.script.json
+- q2 | 过早x1 | audio=./eval/reports/synthetic_seed0.wav | log=./eval/reports/synthetic_seed0.script.json
+- q3 | 过早x1 | audio=./eval/reports/synthetic_seed0.wav | log=./eval/reports/synthetic_seed0.script.json
+- q4 | 过早x1 | audio=./eval/reports/synthetic_seed0.wav | log=./eval/reports/synthetic_seed0.script.json
+
+## 重叠讲话样本（单列）
+- 无
+
+## 备注（评测工具追加）
+- ASR 为 MockASR 脚本，VAD 为本地实现；t_end 取自合成/标注脚本的真值，t_committed 取自管线 committed 事件的音频时刻。
+- 单通道 meeting 回放，未评测角色识别：上方"角色识别"一节的数值是占位（role_ok 固定为真），无意义。
+- 回放帧由 replay_wav 生成并固定带 replay 标志，本工具在送入管线前将其改为 live。
+- 未启用 --close-on-commit：TurnDetector 没有回答结束信号，后一题开口会被记为对前一题的回滚（过早），这是缺少 M05-5 的产物。

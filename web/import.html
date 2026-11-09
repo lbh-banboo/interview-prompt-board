@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>导入资料</title>
+<link rel="stylesheet" href="/review.css">
+<link rel="stylesheet" href="/import.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>导入资料</h1>
+  <a class="link" href="/home.html">工作台</a>
+</header>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+<main class="wrap">
+  <section class="panel" aria-label="导入主库">
+    <h2>导入主库</h2>
+    <p class="muted">选择 .md 文件或粘贴文本，最大 5MB。导入后全部条目保持待审核，不会自动启用。</p>
+    <div class="form">
+      <label>资料库名称
+        <input id="name" type="text" maxlength="150" placeholder="例如：个人面试资料 2026 春" autocomplete="off">
+      </label>
+      <label>选择 .md 文件
+        <input id="file" type="file" accept=".md,text/markdown">
+      </label>
+      <label>或粘贴文本
+        <textarea id="text" spellcheck="false" placeholder="把 Markdown 原文粘贴到这里"></textarea>
+      </label>
+      <div class="actions">
+        <button id="submit" class="btn pill" type="button">导入资料</button>
+      </div>
+    </div>
+    <p id="result" class="result" role="status" hidden></p>
+    <details class="format" open>
+      <summary>格式说明与示例</summary>
+      <ul id="format-rules" class="rules"></ul>
+      <pre id="format-example" aria-label="格式示例"></pre>
+    </details>
+  </section>
+
+  <section class="panel" aria-label="已有主库">
+    <h2>已有主库</h2>
+    <ul id="libs" class="libs"></ul>
+    <p id="libs-empty" class="muted" hidden>还没有主库，先在上方导入一份资料。</p>
+  </section>
+
+  <section class="panel" aria-label="次优库">
+    <h2>次优库（通用建议）</h2>
+    <p id="secondary-summary" class="muted">正在读取…</p>
+    <p id="secondary-roles" class="muted"></p>
+    <div class="actions">
+      <button id="secondary-import" class="btn" type="button">导入/更新内置种子</button>
+      <a class="btn" href="/secondary.html">去审核次优库</a>
+    </div>
+    <p id="secondary-msg" class="muted" role="status" aria-live="polite"></p>
+  </section>
+</main>
+<script type="module" src="/import.js"></script>
+</body>
+</html>

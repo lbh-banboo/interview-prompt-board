@@ -1,0 +1,9 @@
+{
+ "tau_cos": 0.74,
+ "tau_cos_strong": 0.8,
+ "tau_mid": 0.62,
+ "margin": 0.03,
+ "embedder_revision": "Qdrant/bge-small-zh-v1.5@46fbe35fd4374a00fee7de77dfddaeb6dd6a2c59+sha256:1294ea4b6331115a",
+ "index_version": "eef1bb646451|Qdrant/bge-small-zh-v1.5@46fbe35fd4374a00fee7de77dfddaeb6dd6a2c59+sha256:1294ea4b6331115a|fts5-trigram",
+ "source": "tools/eval_retrieval.py 校准半区选取（规则改写评测集，非真实语音；见 eval/retrieval/report.md）"
+}

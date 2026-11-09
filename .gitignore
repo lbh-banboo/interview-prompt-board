@@ -1,0 +1,37 @@
+# 本机数据与凭证：真实个人题库、录音、日志与 Key 一律不进仓库
+data/
+.env
+*.env
+
+# 评测中的个人录音、转写与截图（含真实面试内容）
+eval/audio*
+eval/annotations/
+eval/reports/real/
+# 真人组 L7 报告：含真实录音的 ASR 转写片段与私人录音外发的内部记录，不随仓库发布
+eval/reports/l7/
+eval/l7_runs/
+eval/screens/
+# 由个人主库派生的评测集（题目与期望条目均来自真实面试复盘）
+eval/retrieval/eval_set.json
+
+# 内部调研与上游源码快照：只发布 MANIFEST 与各上游 LICENSE，源码按 MANIFEST 用 tools/r0_fetch.py 复现
+research/
+third_party/*/*
+!third_party/*/LICENSE
+
+# 运行与构建产物
+output/
+.workbuddy/
+.venv/
+node_modules/
+*.sqlite3
+.coverage
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# 模型权重：按 models/MANIFEST.json 记录的哈希用 tools/fetch_models.py 下载，权重本体不入库
+models/**/*.onnx
+models/**/.cache/
+models/**/.gitattributes

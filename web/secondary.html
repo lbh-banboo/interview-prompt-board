@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>次优库审核台</title>
+<link rel="stylesheet" href="/review.css">
+<link rel="stylesheet" href="/nav/nav.css">
+<script type="module" src="/nav/nav.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>次优库审核台</h1>
+  <select id="role" aria-label="岗位"></select>
+  <div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="326" id="prog">
+    <div class="prog-bar"><i id="prog-fill"></i></div>
+    <span id="prog-label">已审核 0/0</span>
+  </div>
+  <a class="link" href="/review.html">主库审核</a>
+</header>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+<main class="layout">
+  <aside class="side" aria-label="题库与筛选">
+    <p class="muted">次优库内容只作为“通用建议”展示，不冒充个人经历；示例均为待本人补充的占位。</p>
+    <input id="search" type="search" placeholder="搜索编号或问题" aria-label="搜索">
+    <div id="filters" class="filters" role="tablist"></div>
+    <ul id="list" class="list"></ul>
+    <div class="batch">
+      <div id="batch-info" class="muted"></div>
+      <button id="select-safe" class="btn" type="button">勾选视图内全部可批量条目</button>
+      <label class="check"><input type="checkbox" id="batch-confirm"><span>已核对所选条目为通用建议</span></label>
+      <button id="batch-btn" class="btn pill" type="button">批量通过</button>
+      <ul id="batch-rejects" class="rejects"></ul>
+    </div>
+  </aside>
+  <section class="detail" id="detail" aria-label="条目详情"></section>
+</main>
+<footer class="keys">键盘：j 下一条 · k 上一条 · a 通过 · h 暂缓 · r 驳回</footer>
+<script type="module" src="/secondary.js"></script>
+</body>
+</html>
