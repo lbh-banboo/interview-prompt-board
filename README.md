@@ -1,9 +1,18 @@
-# 访谈提示板
+# 访谈提示板 / Interview Prompt Board
+
+[![CI](https://github.com/lbh-banboo/interview-prompt-board/actions/workflows/ci.yml/badge.svg)](https://github.com/lbh-banboo/interview-prompt-board/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](requirements.txt)
+[![Node](https://img.shields.io/badge/Node.js-22-green.svg)](package.json)
+
+**EN**: A local-only interview teleprompter — it transcribes the interviewer's questions in real time, retrieves matching talking points from a Q&A bank you personally reviewed, and shows them on a prompt board. All data stays on your machine.
 
 面试实时提词系统：把对方的提问实时转写出来，从你自己审核过的题库里找出对应的回答要点，显示在提示板上。
 服务只在本机运行（`127.0.0.1:8765`），数据存在本机 `data/` 目录。
 
-> 状态：个人项目，只在 macOS（Apple Silicon）上开发和测试过。真机场景（扬声器回声、各会议客户端、30 分钟以上连续采集）尚未系统验证，单价与阈值也是估算值。
+![演示：选择音源 → 实时提示 → 结束导出](.github/assets/demo-flow.gif)
+
+> 状态：个人项目，只在 macOS（Apple Silicon）上开发和测试过。真机场景（扬声器回声、各会议客户端、30 分钟以上连续采集）尚未系统验证，单价与阈值也是估算值。演示动图为本地验证模式（未接入云端模型）。
 
 ## 先读这一节：默认会把什么发到哪里
 
@@ -43,7 +52,7 @@ npm run build                                  # TypeScript 编译到 web/
 .venv/bin/python run.py
 ```
 
-浏览器打开 <http://127.0.0.1:8765>。服务只监听回环地址，**没有账号体系**：
+浏览器打开 `http://127.0.0.1:8765`。服务只监听回环地址，**没有账号体系**：
 页面用每次启动随机生成的 `X-Local-Token` 防跨站请求，这不是登录认证，请不要把端口转发或暴露到其他机器。
 
 Key 可以在工作台“凭证”面板填写，也可以用环境变量：
